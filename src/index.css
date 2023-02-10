@@ -1,3 +1,16 @@
 .button {
   margin-left: 20px;
 }
+.modal-form {
+  margin-top: 170px;
+}
+.modal-input {
+  background: #f1e3e3;
+  height: 44px;
+  width: 300px;
+}
+.input-button {
+  background: #fff;
+  height: 50px;
+  width: 100px;
+}

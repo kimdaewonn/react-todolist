@@ -4,8 +4,8 @@ import { useState } from "react";
 import Modal from "./Modal";
 
 const Btn = styled.div`
-  width: 100px;
-  height: 50px;
+  width: 200px;
+  height: 100px;
   background: #000;
   color: #fff;
   border-radius: 5px;
@@ -26,7 +26,7 @@ const Button = () => {
           setToggle(!toggle);
         }}
       >
-        모달버튼
+        모달 toggle
       </Btn>
       <Modal sendToggle={toggle}></Modal>
     </>

@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { useState } from "react";
 
 const ModalBox = styled.div`
   width: 800px;
   height: 300px;
-  background: skyblue;
+  background: #d1e1ff;
   border-radius: 5px;
   position: fixed;
   top: 50%;
@@ -17,8 +18,39 @@ const ModalBox = styled.div`
 `;
 
 const Modal = (props) => {
-  console.log(props.sendToggle);
-  return <ModalBox sendToggle={props.sendToggle}>Todolist</ModalBox>;
+  // console.log(props.sendToggle);
+  const [list, setList] = useState([]);
+  const [newItem, setNewItem] = useState("");
+  // console.log(newItem);
+
+  const handleAddItem = () => {
+    setList([...list, newItem]);
+    setNewItem("");
+  };
+
+  return (
+    <>
+      <ModalBox sendToggle={props.sendToggle}>
+        <div className="modal-form">
+          <input
+            className="modal-input"
+            type="text"
+            value={newItem}
+            onChange={(e) => setNewItem(e.target.value)}
+          />
+          <button className="input-button" onClick={handleAddItem}>
+            Add
+          </button>
+        </div>
+      </ModalBox>
+
+      <ul>
+        {list.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </>
+  );
 };
 
 export default Modal;
