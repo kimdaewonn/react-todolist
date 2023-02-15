@@ -21,8 +21,6 @@ const Modal = ({sendToggle}) => {
   // console.log(props.sendToggle);
   const [list, setList] = useState([]);
   const [newItem, setNewItem] = useState("");
-  // console.log(newItem);
-
   const handleAddItem = () => {
     setList([...list, newItem]);
     setNewItem("");
@@ -36,14 +34,15 @@ const Modal = ({sendToggle}) => {
             className="modal-input"
             type="text"
             value={newItem}
-            onChange={(e) => setNewItem(e.target.value)}
+            onChange={(e) => {
+              setNewItem(e.target.value);
+            }}
           />
           <button className="input-button" onClick={handleAddItem}>
             Add
           </button>
         </div>
       </ModalBox>
-
       <ul>
         {list.map((item, index) => (
           <li key={index}>{item}</li>
