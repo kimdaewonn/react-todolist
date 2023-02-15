@@ -11,7 +11,7 @@ const ModalBox = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: ${props => props.sendToggle ? "none" : "flex"};
+  display: ${({sendToggle}) => sendToggle ? "none" : "flex"};
   justify-content: center;
   align-items: center;
   font-size: 20px;
